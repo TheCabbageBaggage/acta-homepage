@@ -3,11 +3,4 @@ services:
     build: .
     container_name: acta-homepage
     network_mode: host
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.acta.rule=Host(`acta.cabbagebaggage.net`)"
-      - "traefik.http.routers.acta.entrypoints=websecure"
-      - "traefik.http.routers.acta.tls=true"
-      - "traefik.http.routers.acta.tls.certresolver=letsencrypt"
-      - "traefik.http.services.acta.loadbalancer.server.port=80"
     restart: unless-stopped
