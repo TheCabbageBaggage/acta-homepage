@@ -1,0 +1,65 @@
+<section class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Start</a> / <a href="beispiele.html">Beispiele</a> / Technische Zeichnungen</p>
+  <h1>Daten aus technischen Zeichnungen lesen</h1>
+  <p class="lead">Für Angebote, Stammdaten und Arbeitsvorbereitung werden Angaben aus Zeichnungen immer wieder von Hand übertragen: Zeichnungsnummer, Werkstoff, Toleranzen, Änderungsstand. Das lässt sich automatisieren, auch für Zeichnungen von Kunden in fremden Formaten.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <figure class="demo" aria-label="Beispiel: Schriftfeld einer Zeichnung wird ausgelesen">
+    <div class="demo-grid">
+      <div class="demo-pane alt">
+        <p class="demo-cap">Eingang: Zeichnung als PDF, Revision C</p>
+        {{PART:zeichnung}}
+      </div>
+      <div class="demo-pane">
+        <p class="demo-cap">Ergebnis: Stammdaten und Änderungen</p>
+        <table class="kv">
+          <thead><tr><th>Feld</th><th>Wert</th><th class="src">Quelle</th></tr></thead>
+          <tbody>
+            <tr><td>Zeichnungsnr.</td><td>40-118-03</td><td class="src">Schriftfeld</td></tr>
+            <tr><td>Benennung</td><td>Antriebswelle</td><td class="src">Schriftfeld</td></tr>
+            <tr><td>Werkstoff</td><td>42CrMo4+QT</td><td class="src">Schriftfeld</td></tr>
+            <tr><td>Allgemeintol.</td><td>ISO 2768-mK</td><td class="src">Schriftfeld</td></tr>
+            <tr><td>Index</td><td>C</td><td class="src">Schriftfeld</td></tr>
+            <tr><td>Gewicht</td><td>3,9 kg</td><td class="src">Schriftfeld</td></tr>
+            <tr><td>Passmaße</td><td>Ø50 h6</td><td class="src">Ansicht</td></tr>
+            <tr><td>Oberfläche</td><td>Ra 0,8</td><td class="src">Ansicht</td></tr>
+            <tr class="chg"><td>Änderung B → C</td><td>Ø50 g6 → h6</td><td class="src">Änd.-Tabelle</td></tr>
+          </tbody>
+        </table>
+        <p class="flag-note" style="background:var(--petrol-xl);color:var(--petrol-d)"><b>Hinweis an die AV:</b> Passung am Lagersitz geändert. Prüfplan und Arbeitsplan für 40-118-03 betroffen.</p>
+      </div>
+    </div>
+    <figcaption class="demo-foot"><span>Fiktive Zeichnung</span><span>Export als Excel oder Stammdaten-Import</span></figcaption>
+  </figure>
+</div></section>
+
+<section class="sec sec-white"><div class="wrap split2">
+  <div>
+    <h2 style="font:700 clamp(24px,2.4vw,30px)/1.2 var(--sans);letter-spacing:-.02em;margin-bottom:24px">So läuft es ab</h2>
+    <ol class="steps-list">
+      <li><h3>Zeichnungen sammeln</h3><p>Aus einem Ordner, dem PDM-Export oder als Anhang einer Kundenanfrage. Vektor-PDFs und Scans werden gleich behandelt.</p></li>
+      <li><h3>Schriftfeld und Tabellen lesen</h3><p>Die Felder des Schriftfelds, die Änderungstabelle und Stücklisten werden erkannt, auch wenn das Layout von Kunde zu Kunde anders ist.</p></li>
+      <li><h3>Angaben in der Ansicht finden</h3><p>Passmaße, Oberflächenangaben und Hinweise wie Wärmebehandlung werden gesucht und als Liste ausgegeben, jeweils mit Ausschnitt.</p></li>
+      <li><h3>Mit dem Vorgänger vergleichen</h3><p>Liegt eine ältere Revision vor, zeigt der Vergleich, welche Angaben sich geändert haben, und wer davon wissen muss.</p></li>
+      <li><h3>Übernahme in Ihre Systeme</h3><p>Als Datei für Stammdaten, Kalkulation oder Prüfplanung. Die Zeichnung bleibt verknüpft.</p></li>
+    </ol>
+  </div>
+  <div>
+    <dl class="facts" style="grid-template-columns:1fr 1fr">
+      <div><dt>Typische Anwendung</dt><dd>Angebotsanfragen, Stammdatenpflege, Änderungsdienst</dd></div>
+      <div><dt>Formate</dt><dd>PDF (Vektor oder Scan), TIFF</dd></div>
+      <div><dt>Schriftfelder</dt><dd>ISO 7200 und kundeneigene Layouts</dd></div>
+      <div><dt>Ihr Aufwand danach</dt><dd>Stichproben und markierte Fälle</dd></div>
+    </dl>
+    <div class="limits" style="margin-top:40px;grid-template-columns:1fr">
+      <div><h3>Was automatisch passiert</h3><ul><li>Lesen von Schriftfeld, Änderungstabelle und Stückliste</li><li>Liste der Passmaße und Oberflächenangaben mit Fundstelle</li><li>Vergleich zweier Revisionen auf Textebene</li></ul></div>
+      <div><h3>Was nicht automatisch passiert</h3><ul><li>Keine Geometrie-Auswertung und keine Umwandlung in CAD-Modelle</li><li>Maßketten und Toleranzanalysen bleiben bei Ihrer Konstruktion</li><li>Unklare Angaben werden markiert, nicht geraten</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="note"><strong>Passende Pakete:</strong> Im <a href="leistungen.html#e2">Dokumenten-Check</a> testen wir 20 Ihrer Zeichnungen (490 €). Für den laufenden Einsatz die <a href="leistungen.html#p1">Pipeline als Pilot</a> (ab 1.900 €), danach <a href="leistungen.html#l2">Betrieb</a> für 99 € im Monat.
+    <p class="cta-row" style="margin-top:16px"><a class="btn btn-primary" href="{{SHOP}}/pakete/dokumenten-check">Check im Webshop bestellen</a><a class="btn btn-ghost" href="beispiel-fristen.html">Nächstes Beispiel: Fristen</a></p></div>
+</div></section>

@@ -1,0 +1,32 @@
+<svg class="drawing" viewBox="0 0 560 360" role="img" aria-label="Technische Zeichnung einer Welle mit Schriftfeld und Änderungstabelle (fiktiv)">
+<rect x="8" y="8" width="544" height="344" fill="none" stroke="#2a3739" stroke-width="1.2"/>
+<path d="M40 130h300" stroke="#8a9193" stroke-width=".8" stroke-dasharray="14 4 2 4"/>
+<path d="M60 108h60v-6h150v6h50v44h-50v6H120v-6H60z" fill="#f1f2ef" stroke="#2a3739" stroke-width="1.6"/>
+<path d="M60 112l4-4M60 148l4 4M320 112l-4-4M320 148l-4 4" stroke="#2a3739"/>
+<g stroke="#5e6b6e" stroke-width=".8" fill="none"><path d="M60 158v40M320 158v40M60 192h260"/><path d="M60 192l6-2v4zM320 192l-6-2v4z" fill="#5e6b6e"/>
+<path d="M195 102v-40M195 158v40" stroke-dasharray="0"/><path d="M120 92v-30M270 92v-30M120 70h150"/><path d="M120 70l6-2v4zM270 70l-6-2v4z" fill="#5e6b6e"/></g>
+<text x="190" y="188" font-family="JetBrains Mono,monospace" font-size="11" fill="#2a3739" text-anchor="middle">260</text>
+<text x="195" y="66" font-family="JetBrains Mono,monospace" font-size="11" fill="#2a3739" text-anchor="middle">150</text>
+<rect x="208" y="116" width="58" height="20" rx="3" fill="#8fb4ba" fill-opacity=".35"/>
+<text x="237" y="130" font-family="JetBrains Mono,monospace" font-size="11" fill="#071012" text-anchor="middle">Ø50 h6</text>
+<g transform="translate(286 96)"><path d="M0 0l5 9 9-18h22" fill="none" stroke="#2a3739" stroke-width="1"/><text x="16" y="-12" font-family="JetBrains Mono,monospace" font-size="9" fill="#2a3739">Ra 0,8</text></g>
+<rect x="282" y="76" width="56" height="24" rx="3" fill="#8fb4ba" fill-opacity=".35"/>
+<!-- Änderungstabelle -->
+<g font-family="JetBrains Mono,monospace" font-size="8.5" fill="#2a3739">
+<rect x="350" y="20" width="192" height="46" fill="none" stroke="#2a3739" stroke-width=".8"/>
+<path d="M350 32h192M350 49h192M366 20v46M494 20v46" stroke="#2a3739" stroke-width=".6"/>
+<text x="354" y="29">Ä</text><text x="370" y="29">Änderung</text><text x="498" y="29">Datum</text>
+<text x="354" y="44">B</text><text x="370" y="44">Fase 1x45° ergänzt</text><text x="498" y="44">12.05.26</text>
+<rect x="351" y="50" width="190" height="15" fill="#8fb4ba" fill-opacity=".35"/>
+<text x="354" y="61">C</text><text x="370" y="61">Ø50 g6 → h6</text><text x="498" y="61">03.10.26</text>
+</g>
+<!-- Schriftfeld -->
+<g font-family="Inter,sans-serif" fill="#2a3739">
+<rect x="300" y="250" width="240" height="90" fill="none" stroke="#2a3739" stroke-width="1.2"/>
+<path d="M300 272h240M300 294h240M300 316h240M420 250v90" stroke="#2a3739" stroke-width=".6"/>
+<g font-size="7" fill="#5e6b6e"><text x="304" y="258">Benennung</text><text x="424" y="258">Zeichnungsnummer</text><text x="304" y="280">Werkstoff</text><text x="424" y="280">Maßstab / Blatt</text><text x="304" y="302">Allgemeintoleranz</text><text x="424" y="302">Änderungsindex</text><text x="304" y="324">Gezeichnet</text><text x="424" y="324">Gewicht</text></g>
+<g font-size="10.5" font-weight="600"><text x="304" y="269">Antriebswelle</text><text x="424" y="269" font-family="JetBrains Mono,monospace">40-118-03</text><text x="304" y="291" font-family="JetBrains Mono,monospace">42CrMo4+QT</text><text x="424" y="291">1:2 / 1 von 1</text><text x="304" y="313" font-family="JetBrains Mono,monospace">ISO 2768-mK</text><text x="424" y="313" font-family="JetBrains Mono,monospace">C</text><text x="304" y="335">M. Muster</text><text x="424" y="335">3,9 kg</text></g>
+</g>
+<g fill="#8fb4ba" fill-opacity=".35"><rect x="421" y="259" width="118" height="12"/><rect x="301" y="281" width="118" height="12"/><rect x="301" y="303" width="118" height="12"/><rect x="421" y="303" width="118" height="12"/></g>
+<text x="20" y="340" font-family="Inter,sans-serif" font-size="9" fill="#8a9193">Fiktive Beispielzeichnung</text>
+</svg>

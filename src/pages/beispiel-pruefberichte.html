@@ -1,0 +1,77 @@
+<section class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Start</a> / <a href="beispiele.html">Beispiele</a> / Prüfberichte</p>
+  <h1>Prüfberichte automatisch auswerten</h1>
+  <p class="lead">Ein Zulieferer schickt zu jeder Lieferung einen Prüfbericht, mal als PDF, mal als Scan. Heute tippt jemand im Wareneingang die Werte ab. Mit einer Pipeline kommen sie geprüft im ERP an.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <figure class="demo" aria-label="Beispiel: Prüfbericht wird zu Datensatz">
+    <div class="demo-grid">
+      <div class="demo-pane alt">
+        <p class="demo-cap">Eingang: Scan eines Prüfberichts, Seite 1 von 2</p>
+        <div class="sheet" style="font-size:12px">
+          <div class="sheet-h"><span>ABNAHMEPRÜFZEUGNIS 3.1 EN 10204</span><span>PB-2026-0412</span></div>
+          <table>
+            <tr><td>Lieferant</td><td>Muster Präzision GmbH</td></tr>
+            <tr><td>Bestellung</td><td>4500183321</td></tr>
+            <tr><td>Bauteil</td><td>Antriebswelle 40-118-03</td></tr>
+            <tr><td>Charge</td><td>C-77310</td></tr>
+            <tr class="hl"><td>Ø Lagersitz (Soll 50 h6)</td><td>49,991 mm</td></tr>
+            <tr><td>Rauheit Ra (Soll ≤ 0,8)</td><td>0,6 µm</td></tr>
+            <tr class="hw"><td>Härte (Soll 54–58 HRC)</td><td>56 HRC?</td></tr>
+            <tr><td>Prüfergebnis</td><td>i. O.</td></tr>
+          </table>
+          <div class="sig">Prüfer, 28.10.2026</div>
+        </div>
+      </div>
+      <div class="demo-pane">
+        <p class="demo-cap">Ergebnis: Datensatz mit Plausibilitätsprüfung</p>
+        <table class="kv">
+          <thead><tr><th>Feld</th><th>Wert</th><th class="src">Quelle</th></tr></thead>
+          <tbody>
+            <tr><td>Prüfnummer</td><td>PB-2026-0412</td><td class="src">S. 1</td></tr>
+            <tr><td>Bestellung</td><td>4500183321</td><td class="src">S. 1</td></tr>
+            <tr><td>Material</td><td>40-118-03</td><td class="src">S. 1</td></tr>
+            <tr><td>Charge</td><td>C-77310</td><td class="src">S. 1</td></tr>
+            <tr><td>Ø Lagersitz</td><td>49,991 mm ✓</td><td class="src">S. 1</td></tr>
+            <tr><td>Ra</td><td>0,6 µm ✓</td><td class="src">S. 1</td></tr>
+            <tr class="flag"><td>Härte</td><td>56 HRC ?</td><td class="src">S. 1</td></tr>
+            <tr><td>Ergebnis</td><td>i. O.</td><td class="src">S. 2</td></tr>
+          </tbody>
+        </table>
+        <p class="flag-note"><b>Zur Prüfung:</b> Härte handschriftlich eingetragen, Lesung unsicher. Der Datensatz wartet auf Ihre Bestätigung.</p>
+      </div>
+    </div>
+    <figcaption class="demo-foot"><span>Fiktive Daten. ✓ = innerhalb der Toleranz aus der Bestellung</span><span>Export als Excel, CSV oder ERP-Importdatei</span></figcaption>
+  </figure>
+</div></section>
+
+<section class="sec sec-white"><div class="wrap split2">
+  <div>
+    <h2 class="prose" style="font:700 clamp(24px,2.4vw,30px)/1.2 var(--sans);letter-spacing:-.02em;margin-bottom:24px">So läuft es ab</h2>
+    <ol class="steps-list">
+      <li><h3>Prüfbericht kommt an</h3><p>Per E-Mail an eine eigene Adresse oder als Upload in einen Ordner. Scans und PDFs werden gleich behandelt.</p></li>
+      <li><h3>Text und Tabellen werden gelesen</h3><p>Texterkennung und ein Sprachmodell finden die vereinbarten Felder, auch wenn jeder Lieferant ein anderes Layout verwendet.</p></li>
+      <li><h3>Werte werden geprüft</h3><p>Messwerte werden mit den Sollwerten aus Bestellung oder Zeichnung verglichen. Fehlende Felder, unlesbare Stellen und Ausreißer werden markiert.</p></li>
+      <li><h3>Sie bestätigen nur die Ausnahmen</h3><p>Eindeutige Datensätze gehen direkt in den Export. Markierte Datensätze sehen Sie mit dem Ausschnitt aus dem Original nebeneinander.</p></li>
+      <li><h3>Export ins ERP</h3><p>Als Datei im Format, das Ihr ERP einlesen kann. Das Originaldokument bleibt verknüpft.</p></li>
+    </ol>
+  </div>
+  <div>
+    <dl class="facts" style="grid-template-columns:1fr 1fr">
+      <div><dt>Geeignet ab</dt><dd>etwa 50 Berichten im Monat</dd></div>
+      <div><dt>Formate</dt><dd>PDF, Scan, Foto</dd></div>
+      <div><dt>Typische Felder</dt><dd>8 bis 25 je Format</dd></div>
+      <div><dt>Ihr Aufwand danach</dt><dd>nur markierte Fälle prüfen</dd></div>
+    </dl>
+    <div class="limits" style="margin-top:40px;grid-template-columns:1fr">
+      <div><h3>Was automatisch passiert</h3><ul><li>Lesen gedruckter und digitaler Berichte, auch bei wechselnden Layouts</li><li>Abgleich mit Toleranzen und Bestelldaten</li><li>Verweis auf Seite und Stelle für jedes Feld</li></ul></div>
+      <div><h3>Was nicht automatisch passiert</h3><ul><li>Handschrift wird gelesen, aber immer zur Prüfung vorgelegt</li><li>Freigaben und Sperren von Chargen entscheiden weiterhin Sie</li><li>Eine direkte ERP-Schnittstelle bauen wir nur nach gesondertem Angebot</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="note"><strong>Passende Pakete:</strong> Zuerst der <a href="leistungen.html#e2">Dokumenten-Check</a> mit 20 Ihrer Berichte (490 €). Dann die <a href="leistungen.html#p1">Pipeline als Pilot</a> für bis zu 3 Formate (ab 1.900 €) und danach der <a href="leistungen.html#l2">Betrieb</a> für 99 € im Monat.
+    <p class="cta-row" style="margin-top:16px"><a class="btn btn-primary" href="{{SHOP}}/pakete/dokumenten-check">Check im Webshop bestellen</a><a class="btn btn-ghost" href="beispiel-zeichnungen.html">Nächstes Beispiel: Zeichnungen</a></p></div>
+</div></section>
