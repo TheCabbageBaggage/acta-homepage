@@ -334,3 +334,19 @@ footer{background:var(--ink);color:#93a1a3;border-top:1px solid #1c2a2c;padding:
 }
 figure.demo{margin:0}
 .page-head + .sec{padding-top:56px}
+@media(max-width:620px){.price-tbl .num{white-space:normal}.price-tbl{font-size:14px}}
+/* Feedback-Runde */
+.side-sticky{position:sticky;top:96px}
+.menu-list{left:auto;right:0}
+@media(max-width:1000px){.side-sticky{position:static}}
+@media(max-width:620px){
+  .cmp{min-width:0}
+  .cmp thead{display:none}
+  .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:auto}
+  .cmp tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:var(--white)}
+  .cmp tbody th{width:auto;font-weight:700;color:var(--ink);padding:12px 14px 6px;border:0}
+  .cmp td{padding:6px 14px;border:0;display:grid;grid-template-columns:7.5em 1fr;gap:8px;font-size:14.5px}
+  .cmp td::before{content:attr(data-l);color:var(--muted);font-weight:500}
+  .cmp td.us{padding:10px 14px 12px;margin-top:4px}
+  .cmp-wrap{overflow:visible}
+}
