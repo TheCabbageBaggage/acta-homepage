@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="canonical" href="{{URL}}">
+<link rel="alternate" hreflang="de" href="{{URL_DE}}">
+<link rel="alternate" hreflang="en" href="{{URL_EN}}">
+<meta name="theme-color" content="#f7f6f2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:url" content="{{URL}}">
+<meta property="og:image" content="https://actasystems.eu/assets/brand/acta-systems-og-image.png">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap top-in">
+  <a href="index.html" aria-label="acta.systems home">{{LOGO}}</a>
+  <nav aria-label="Main navigation">
+    <span class="navlinks">{{NAV}}</span>
+    <details class="menu"><summary>Menu</summary><div class="menu-list">{{NAV}}</div></details>
+    <a class="lang" href="{{LANGLINK}}" hreflang="de" lang="de" title="Deutsche Version">DE</a>
+    <a class="btn btn-dark" href="{{SHOP}}/pakete">Online shop</a>
+  </nav>
+</div></header>
+
+<main id="main">
+{{BODY}}
+</main>
+
+<footer class="on-dark"><div class="wrap">
+  <div class="foot">
+    <div>{{LOGO}}<p>AI for technical documents in industrial SMEs.<br>Fixed price, EU hosting, every value with its source.</p></div>
+    <div><h4>Services</h4><ul><li><a href="leistungen.html">Packages and prices</a></li><li><a href="beispiele.html">Examples</a></li><li><a href="vorgehen.html">Process</a></li><li><a href="{{SHOP}}/pakete">Online shop</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="ueber-uns.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="kontakt.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="impressum.html">Imprint</a></li><li><a href="datenschutz.html">Privacy</a></li><li><a href="{{SHOP}}/agb">Terms (German)</a></li><li><a href="{{SHOP}}/avv">Data processing agreement (German)</a></li></ul></div>
+  </div>
+  <p class="foot-legal">© 2026 acta.systems · actasystems.eu. All prices exclude VAT. Business customers only.</p>
+</div></footer>
+</body>
+</html>
