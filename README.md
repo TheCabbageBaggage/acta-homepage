@@ -1,33 +1,37 @@
 # acta-homepage — actasystems.eu
 
 Statische Firmenseite von acta.systems: KI für technische Dokumente in Industrie-KMU.
-Gemeinsames acta-CI mit acta.lab (Petrol `#285d66`, Tinte `#071012`, Papier `#f7f6f2`,
-Inter und JetBrains Mono, selbst gehostet). „systems“ hat immer eine andere Farbe als
-„acta“: auf hellem Grund Petrol, auf dunklem `#8fb4ba` (Klasse `.on-dark`).
+Kein JavaScript, keine Cookies, keine externen Abrufe. Gemeinsames acta-CI mit acta.lab
+(Petrol `#285d66`, Tinte `#071012`, Papier `#f7f6f2`, Inter und JetBrains Mono selbst gehostet).
+„systems“ hat immer eine andere Farbe als „acta“: auf hellem Grund Petrol, auf dunklem `#8fb4ba`.
+
+## Aufbau
 
 | Pfad | Inhalt |
 |---|---|
-| `index.html` | die Seite, CSS inline, kein JavaScript |
-| `assets/brand/` | Logo (hell, dunkel), Icon, Favicon, OG-Bild |
-| `assets/fonts/` | Inter, JetBrains Mono (OFL) |
-| `Dockerfile`, `docker-compose.yml` | Auslieferung auf Port 8080 |
+| `src/pages/*.html` | Inhalt jeder Seite (nur `<main>`). **Texte hier ändern.** |
+| `src/layout.html` | Kopf, Navigation und Fuß für alle Seiten |
+| `src/partials/*.svg` | Grafiken der Beispiele, eingebunden mit `{{PART:name}}` |
+| `src/build.py` | baut die Seiten; enthält die Seitenliste mit Titel und Beschreibung |
+| `assets/site.css` | Gestaltung |
+| `assets/brand/`, `assets/fonts/` | Logo, Favicon, OG-Bild, Schriften (OFL) |
+| `*.html` im Wurzelverzeichnis | **generiert**, nicht direkt bearbeiten |
+
+```bash
+python3 src/build.py          # nach jeder Änderung an src/
+```
+
+Seiten: Start, Leistungen, Beispiele (Prüfberichte, Zeichnungen, Fristen), Vorgehen,
+Über uns, FAQ, Kontakt, Impressum, Datenschutz. Impressum und Datenschutz sind Entwürfe
+mit markierten Platzhaltern und müssen vor der Veröffentlichung ergänzt werden.
 
 ## Webshop
 
-Alle Paket-, Kontakt- und Rechtslinks zeigen auf den Webshop
-(`https://shop.actasystems.eu`, Routen laut `projectplan_actalab_shop.md`:
-`/pakete`, `/pakete/<slug>`, `/kontakt`, `/impressum`, `/datenschutz`, `/agb`, `/avv`).
-Andere Shop-Adresse:
-
-```bash
-sed -i 's#https://shop.actasystems.eu#https://NEUE-ADRESSE#g' index.html
-```
+Bestell-Links zeigen auf `https://shop.actasystems.eu` (Konstante `SHOP` in `src/build.py`).
+Verwendete Routen laut Shop-Projektplan: `/pakete`, `/pakete/<slug>`, `/agb`, `/avv`, `/datenschutz`.
 
 ## Deploy
 
 ```bash
 docker compose up -d --build
 ```
-
-Preise und Paketumfänge entsprechen dem Angebotsportfolio (Stand November 2026).
-Bei Preisänderungen `index.html` und den Shop-Katalog gemeinsam anpassen.
