@@ -1,0 +1,77 @@
+<section class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Home</a> / <a href="beispiele.html">Examples</a> / Inspection reports</p>
+  <h1>Extracting inspection reports automatically</h1>
+  <p class="lead">A supplier sends an inspection report with every delivery, sometimes as a PDF, sometimes as a scan. Today someone in goods receipt types in the values. A pipeline reads the values, compares them with the target values and provides them as an import file for the ERP.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <figure class="demo" aria-label="Example: an inspection report becomes a record">
+    <div class="demo-grid">
+      <div class="demo-pane alt">
+        <p class="demo-cap">Input: scan of an inspection report, page 1 of 2</p>
+        <div class="sheet" style="font-size:12px">
+          <div class="sheet-h"><span>MEASUREMENT AND INSPECTION REPORT</span><span>PB-2026-0412</span></div>
+          <table>
+            <tr><td>Supplier</td><td>Muster Präzision GmbH</td></tr>
+            <tr><td>Purchase order</td><td>4500183321</td></tr>
+            <tr><td>Part</td><td>Drive shaft 40-118-03</td></tr>
+            <tr><td>Batch</td><td>C-77310</td></tr>
+            <tr class="hl"><td>Ø bearing seat (target 50 k6)</td><td>50.012 mm</td></tr>
+            <tr><td>Roughness Ra (target ≤ 0.8)</td><td>0.6 µm</td></tr>
+            <tr class="hw"><td>Hardness (target 28–34 HRC)</td><td>31 HRC?</td></tr>
+            <tr><td>Inspection result</td><td>OK</td></tr>
+          </table>
+          <div class="sig">Inspector, 28.10.2026</div>
+        </div>
+      </div>
+      <div class="demo-pane">
+        <p class="demo-cap">Output: record with plausibility check</p>
+        <table class="kv">
+          <thead><tr><th>Field</th><th>Value</th><th class="src">Source</th></tr></thead>
+          <tbody>
+            <tr><td>Report no.</td><td>PB-2026-0412</td><td class="src">p. 1</td></tr>
+            <tr><td>Purchase order</td><td>4500183321</td><td class="src">p. 1</td></tr>
+            <tr><td>Item no.</td><td>40-118-03</td><td class="src">p. 1</td></tr>
+            <tr><td>Batch</td><td>C-77310</td><td class="src">p. 1</td></tr>
+            <tr><td>Ø bearing seat</td><td>50.012 mm ✓</td><td class="src">p. 1</td></tr>
+            <tr><td>Ra</td><td>0.6 µm ✓</td><td class="src">p. 1</td></tr>
+            <tr class="flag"><td>Hardness</td><td>31 HRC ?</td><td class="src">p. 1</td></tr>
+            <tr><td>Result</td><td>OK</td><td class="src">p. 1</td></tr>
+          </tbody>
+        </table>
+        <p class="flag-note"><b>For review:</b> hardness entered by hand, reading uncertain. The record is waiting for your confirmation.</p>
+      </div>
+    </div>
+    <figcaption class="demo-foot"><span>Fictional data. ✓ = within the tolerance from the purchase order</span><span>Export as Excel, CSV or ERP import file</span></figcaption>
+  </figure>
+</div></section>
+
+<section class="sec sec-white"><div class="wrap split2">
+  <div>
+    <h2 class="prose" style="font:700 clamp(24px,2.4vw,30px)/1.2 var(--sans);letter-spacing:-.02em;margin-bottom:24px">How it works</h2>
+    <ol class="steps-list">
+      <li><h3>The inspection report arrives</h3><p>By email to a dedicated address or as an upload to a folder. Scans and PDFs are handled the same way.</p></li>
+      <li><h3>Text and tables are read</h3><p>Text recognition and a language model find the agreed fields, even if every supplier uses a different layout.</p></li>
+      <li><h3>Values are checked</h3><p>Measured values are compared with the target values from the purchase order or drawing. Missing fields, illegible passages and outliers are flagged.</p></li>
+      <li><h3>You only confirm the exceptions</h3><p>Unambiguous records go straight to the export. Flagged records are shown side by side with the excerpt from the original.</p></li>
+      <li><h3>Export to the ERP</h3><p>As a file in the format your ERP can import. The original document stays linked.</p></li>
+    </ol>
+  </div>
+  <div>
+    <dl class="facts" style="grid-template-columns:1fr 1fr">
+      <div><dt>Suitable from</dt><dd>about 50 reports per month</dd></div>
+      <div><dt>Formats</dt><dd>PDF, scan, photo</dd></div>
+      <div><dt>Typical fields</dt><dd>8 to 25 per format</dd></div>
+      <div><dt>Your effort afterwards</dt><dd>review flagged cases only</dd></div>
+    </dl>
+    <div class="limits" style="margin-top:40px;grid-template-columns:1fr">
+      <div><h3>What is automated</h3><ul><li>Reading printed and digital reports, even with changing layouts</li><li>Comparison with tolerances and order data</li><li>Reference to page and position for every field</li></ul></div>
+      <div><h3>What is not automated</h3><ul><li>Handwriting is read, but always submitted for review</li><li>You still decide on releasing and blocking batches</li><li>We only build a direct ERP interface under a separate quotation</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="note"><strong>Matching packages:</strong> First the <a href="leistungen.html#e2">document check</a> with 20 of your reports (€490). Then the <a href="leistungen.html#p1">pipeline as a pilot</a> for up to 3 formats (from €1,900), followed by <a href="leistungen.html#l2">operation</a> for €99 per month.
+    <p class="cta-row" style="margin-top:16px"><a class="btn btn-primary" href="{{SHOP}}/pakete/dokumenten-check">Order the check in the online shop</a><a class="btn btn-ghost" href="beispiel-zeichnungen.html">Next example: drawings</a></p></div>
+</div></section>

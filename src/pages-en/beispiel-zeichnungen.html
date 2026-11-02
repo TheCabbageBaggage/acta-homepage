@@ -1,0 +1,65 @@
+<section class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Home</a> / <a href="beispiele.html">Examples</a> / Technical drawings</p>
+  <h1>Reading data from technical drawings</h1>
+  <p class="lead">For quotations, master data and production planning, information from drawings is copied by hand again and again: drawing number, material, tolerances, revision. Reading it can be automated, even for customer drawings with an unfamiliar title block.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <figure class="demo" aria-label="Example: the title block of a drawing is read">
+    <div class="demo-grid">
+      <div class="demo-pane alt">
+        <p class="demo-cap">Input: drawing as PDF, revision C</p>
+        {{PART:zeichnung}}
+      </div>
+      <div class="demo-pane">
+        <p class="demo-cap">Output: master data and changes</p>
+        <table class="kv">
+          <thead><tr><th>Field</th><th>Value</th><th class="src">Source</th></tr></thead>
+          <tbody>
+            <tr><td>Drawing no.</td><td>40-118-03</td><td class="src">Title block</td></tr>
+            <tr><td>Title</td><td>Drive shaft</td><td class="src">Title block</td></tr>
+            <tr><td>Material</td><td>42CrMo4+QT</td><td class="src">Title block</td></tr>
+            <tr><td>General tol.</td><td>ISO 2768-mK</td><td class="src">Title block</td></tr>
+            <tr><td>Revision</td><td>C</td><td class="src">Title block</td></tr>
+            <tr><td>Weight</td><td>3.9 kg</td><td class="src">Title block</td></tr>
+            <tr><td>Fits</td><td>Ø50 k6</td><td class="src">View</td></tr>
+            <tr><td>Surface</td><td>Ra 0.8</td><td class="src">View</td></tr>
+            <tr class="chg"><td>Change B → C</td><td>Ø50 j6 → k6</td><td class="src">Rev. table</td></tr>
+          </tbody>
+        </table>
+        <p class="flag-note" style="background:var(--petrol-xl);color:var(--petrol-d)"><b>Note to production planning:</b> fit at the bearing seat changed. Inspection plan and routing for 40-118-03 affected.</p>
+      </div>
+    </div>
+    <figcaption class="demo-foot"><span>Fictional drawing</span><span>Export as Excel or master data import</span></figcaption>
+  </figure>
+</div></section>
+
+<section class="sec sec-white"><div class="wrap split2">
+  <div>
+    <h2 style="font:700 clamp(24px,2.4vw,30px)/1.2 var(--sans);letter-spacing:-.02em;margin-bottom:24px">How it works</h2>
+    <ol class="steps-list">
+      <li><h3>Collect drawings</h3><p>From a folder, a PDM export or as an attachment to a customer enquiry. Vector PDFs and scans are handled the same way.</p></li>
+      <li><h3>Read the title block and tables</h3><p>The fields of the title block, the revision table and parts lists are recognised, even if the layout differs from customer to customer.</p></li>
+      <li><h3>Find information in the view</h3><p>Fits, surface specifications and notes such as heat treatment are located and output as a list, each with an excerpt.</p></li>
+      <li><h3>Compare with the previous revision</h3><p>If an older revision exists, the comparison lists the changed information, for example as a note to production planning.</p></li>
+      <li><h3>Transfer to your systems</h3><p>As a file for master data, costing or inspection planning. The drawing stays linked.</p></li>
+    </ol>
+  </div>
+  <div>
+    <dl class="facts" style="grid-template-columns:1fr 1fr">
+      <div><dt>Typical use</dt><dd>Requests for quotation, master data maintenance, engineering change management</dd></div>
+      <div><dt>Formats</dt><dd>PDF (vector or scan), TIFF</dd></div>
+      <div><dt>Title blocks</dt><dd>ISO 7200 and customer-specific layouts</dd></div>
+      <div><dt>Your effort afterwards</dt><dd>Spot checks and flagged cases</dd></div>
+    </dl>
+    <div class="limits" style="margin-top:40px;grid-template-columns:1fr">
+      <div><h3>What is automated</h3><ul><li>Reading the title block, revision table and parts list</li><li>List of fits and surface specifications with their location</li><li>Comparison of two revisions at text level</li></ul></div>
+      <div><h3>What is not automated</h3><ul><li>No geometry evaluation and no conversion into CAD models</li><li>Dimension chains and tolerance analyses remain with your design department</li><li>Unclear information is flagged, not guessed</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="note"><strong>Matching packages:</strong> In the <a href="leistungen.html#e2">document check</a> we test 20 of your drawings (€490). For ongoing use the <a href="leistungen.html#p1">pipeline as a pilot</a> (from €1,900), then <a href="leistungen.html#l2">operation</a> for €99 per month.
+    <p class="cta-row" style="margin-top:16px"><a class="btn btn-primary" href="{{SHOP}}/pakete/dokumenten-check">Order the check in the online shop</a><a class="btn btn-ghost" href="beispiel-fristen.html">Next example: deadlines</a></p></div>
+</div></section>
